@@ -1,33 +1,46 @@
-# Weather App 🌤️
+<p align="center">
+  <img src="assets/sky-pulse-banner.png" alt="Sky Pulse Banner" width="900"/>
+</p>
 
-A simple and beautifully designed weather web application built using **Node.js**, **Express**, **EJS**, and the **WeatherAPI**.  
-It allows users to enter a city name and view real-time weather information with helpful suggestions based on weather conditions.
 
----
+# 🌤️ Sky Pulse — Modern Weather Forecast Web App
 
-## 🚀 Features
-
-- Search weather by city name
-- Real-time weather data using WeatherAPI
-- Dynamic weather icon display
-- Personalized weather-based advice
-- Modern UI with Tailwind CSS
-- Animated cloud background design
+Sky Pulse is a stylish and intuitive weather application built using **Node.js**, **Express**, **Axios**, and **EJS**.  
+It allows users to search real-time weather conditions for any city worldwide with a beautiful UI and smooth animations.
 
 ---
 
-## 🖥️ Tech Stack
+## ✨ Features
 
-| Technology | Purpose |
-|-----------|---------|
-| Node.js | Backend environment |
-| Express.js | Server framework |
-| EJS | Templating engine |
-| WeatherAPI | Weather data |
-| Tailwind CSS | UI styling |
+- 🔍 Search weather for any city worldwide  
+- 🌡️ Live temperature, humidity, and condition updates  
+- 🎨 Clean and modern UI design
+- 🌙 Light / Dark theme toggle  
+- ☁️ Animated background visuals  
+- 🚀 Fast & lightweight performance  
+- 🔐 Secure environment variables using `.env`
 
 ---
 
+## 🛠️ Tech Stack
+
+| Technology | Usage |
+|-----------|--------|
+| **Node.js** | Backend runtime |
+| **Express.js** | Web server framework |
+| **Axios** | API requests to weather server |
+| **EJS** | Template rendering for UI |
+| **CSS** | Styling (fully custom, no framework) |
+| **dotenv** | Environment variable management |
+
+---
+## 🖼️ Preview
+
+| Light Mode | Dark Mode |
+|-----------|-----------|
+| ![Light UI](images/screenshot-light.png) | ![Dark UI](images/screenshot-dark.png) |
+
+---
 ## 📦 Installation & Setup
 
 ### 1. Clone the Repository

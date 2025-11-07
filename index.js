@@ -20,11 +20,21 @@ app.get("/", (req, res) => {
 app.post("/check-weather", async (req, res) => {
     const city = req.body.city;
     try {
-        const result = await axios.get(`https://api.weatherapi.com/v1/current.json?key=${YOUR_API_KEY}&q=${city}`);
+        const result = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${YOUR_API_KEY}&q=${city}&days=7`);
 
         let conditionCode = result.data.current.condition.code;
         let temperature = result.data.current.temp_c;
         let advice = "";
+        let forecast = result.data.forecast.forecastday.map(day => {
+            return {
+                date: day.date,
+                icon: day.day.condition.icon,
+                condition: day.day.condition.text,
+                max: day.day.maxtemp_c,
+                min: day.day.mintemp_c
+            };
+        });
+
 
         // Weather-based advice
         if (conditionCode === 1000 && temperature > 28) advice = "Sunny & warm! Stay hydrated 😎";
@@ -46,7 +56,8 @@ app.post("/check-weather", async (req, res) => {
             time: result.data.location.localtime,
             temp: temperature,
             icon: result.data.current.condition.icon,
-            weatherBasedAdvice: advice
+            weatherBasedAdvice: advice,
+            forecast
         });
     } catch (error) {
         console.log(error);
