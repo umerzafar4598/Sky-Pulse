@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Pulse</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles/main.css">
+
+</head>
+
+<body>
+
+    <nav class="nav">
+        <h1>Welcome to Sky Pulse</h1>
+    </nav>
+
+    <div class="city-form">
+        <form action="/check-weather" method="post">
+            <label for="city">Enter Your City Name:</label>
+            <input name="city" type="text">
+            <button type="submit" class="form-submit">Get Report</button>
+        </form>
+    </div>
+    <div class="center-wrapper">
+        <div class="weather-data">
+            <div>
+                <h3>
+                    <%= name %>, <%= region %> - <%= country %>
+                </h3>
+                <p>Current Time: <%= time %>
+                </p>
+                <p>Current Temperature in Celsius: <%= temp %>
+                </p>
+            </div>
+            <div class="advice">
+                <p><img src="https:<%= icon %>" alt="Weather Icon">
+                    <%= weatherBasedAdvice %>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
