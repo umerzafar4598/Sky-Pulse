@@ -1,59 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky Pulse</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Result</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/styles/main.css">
-
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-gradient-to-br from-blue-100 to-blue-300 min-h-screen flex items-center justify-center">
 
-    <nav class="nav">
-        <h1>Welcome to Sky Pulse</h1>
-    </nav>
+  <div class="bg-white/70 backdrop-blur-md shadow-xl rounded-2xl p-8 w-[90%] max-w-md text-center border border-white/40">
 
-    <div class="city-form">
-        <form action="/check-weather" method="post">
-            <label for="city">Enter Your City Name:</label>
-            <input name="city" type="text">
-            <button type="submit" class="form-submit">Get Report</button>
-        </form>
-    </div>
-    <div class="center-wrapper">
-        <div class="weather-data">
-            <div>
-                <h3>
-                    <%= name %>, <%= region %> - <%= country %>
-                </h3>
-                <p>Current Time: <%= time %>
-                </p>
-                <p>Current Temperature in Celsius: <%= temp %>
-                </p>
-            </div>
-            <div class="advice">
-                <p><img src="https:<%= icon %>" alt="Weather Icon">
-                    <%= weatherBasedAdvice %>
-                </p>
-            </div>
-        </div>
+    <!-- Location Heading -->
+    <h1 class="text-3xl font-bold text-gray-800 mb-2">
+      <%= name %>, <%= country %>
+    </h1>
+    <p class="text-gray-600 text-sm mb-4">
+      <%= region %> • Local Time: <%= time %>
+    </p>
+
+    <!-- Weather Icon -->
+    <div class="flex justify-center mb-4">
+      <img src="https:<%= icon %>" alt="Weather Icon" class="w-28 h-28 drop-shadow-md">
     </div>
 
+    <!-- Temperature -->
+    <div class="text-5xl font-semibold text-blue-700 mb-3">
+      <%= temp %>°C
+    </div>
+
+    <!-- Advice Card -->
+    <div class="bg-blue-600 text-white py-3 px-4 rounded-xl shadow-md mt-4">
+      <p class="text-lg font-medium">
+        <%= weatherBasedAdvice %>
+      </p>
+    </div>
+
+    <!-- Button to Go Back -->
+    <a href="/" class="inline-block mt-6 text-blue-700 font-semibold hover:underline">
+      ← Check Another City
+    </a>
+  </div>
 
 </body>
-
 </html>
