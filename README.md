@@ -38,7 +38,7 @@ It allows users to search real-time weather conditions for any city worldwide wi
 
 | Light Mode | Dark Mode |
 |-----------|-----------|
-| ![Light UI](images/screenshot-light.png) | ![Dark UI](images/screenshot-dark.png) |
+| ![Light UI](/public/images/screenshot-light.png) | ![Dark UI](/public/images/screenshot-dark.png) |
 
 ---
 ## 📦 Installation & Setup
